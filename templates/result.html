@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CampaignIQ – Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='resultstyle.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>📣 Campaign for "{{ product }}"</h1>
+
+    <div class="section">
+      <h2>Product Analysis</h2>
+      <p>{{ analysis }}</p>
+    </div>
+
+    <div class="section">
+      <h2>Customer Segments</h2>
+      <p>{{ segments }}</p>
+    </div>
+
+    <div class="section">
+      <h2>Personas</h2>
+      <p>{{ personas }}</p>
+    </div>
+
+    <div class="section">
+      <h2>Marketing Content</h2>
+      <p>{{ content }}</p>
+    </div>
+
+    <div class="section">
+      <h2>Channel Strategy ({{ selected_channels | join(', ') }})</h2>
+      <p>{{ strategy }}</p>
+    </div>
+
+    <div class="button-group">
+      <a href="/" class="back-btn">Create Another</a>
+
+    <form method="POST" action="/download-txt">
+      <input type="hidden" name="product" value="{{ product }}">
+      <input type="hidden" name="analysis" value="{{ analysis }}">
+      <input type="hidden" name="segments" value="{{ segments }}">
+      <input type="hidden" name="personas" value="{{ personas }}">
+      <input type="hidden" name="content" value="{{ content }}">
+      <input type="hidden" name="strategy" value="{{ strategy }}">
+      {% for ch in selected_channels %}
+        <input type="hidden" name="channels" value="{{ ch }}">
+      {% endfor %}
+      <button type="submit" class="download-btn">Download as TXT</button>
+    </form>
+
+    </div>
+  </div>
+</body>
+</html>

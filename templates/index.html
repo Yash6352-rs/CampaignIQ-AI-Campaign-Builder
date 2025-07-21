@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CampaignIQ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='indexstyle.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <h1>CampaignIQ</h1>
+  <h3>AI Campaign Builder</h3>
+
+  <div class="container">
+    <p class="subtitle">
+      AI-powered platform to generate personalized, multi-channel marketing campaigns tailored to your product and audience.
+    </p>
+
+    <form id="campaignForm" method="POST" action="/generate">
+
+      <label for="product">Enter Product Name:</label>
+      <input type="text" id="product" name="product" required placeholder="e.g. Smart Fitness Watch" />
+
+      <label>Select Marketing Channels:</label>
+      <div class="checkboxes">
+        <label><input type="checkbox" name="channels" value="Instagram" /> Instagram</label>
+        <label><input type="checkbox" name="channels" value="Email" /> Email</label>
+        <label><input type="checkbox" name="channels" value="Blog" /> Blog</label>
+        <label><input type="checkbox" name="channels" value="Twitter" /> Twitter</label>
+        <label><input type="checkbox" name="channels" value="YouTube" /> YouTube</label>
+      </div>
+
+      <!-- Spinner -->
+      <div id="spinner" class="spinner" style="display: none;"></div>
+      
+      <button type="submit">Generate Campaign</button>
+
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("campaignForm");
+    const spinner = document.getElementById("spinner");
+
+    form.addEventListener("submit", function(e) {
+      spinner.style.display = "block";
+    });
+  </script>
+</body>
+</html>
