@@ -26,16 +26,19 @@ Ideal for marketers, entrepreneurs, and students, it combines LLMs and user inpu
 
 **1. Input Form UI**
 Users can enter a product and choose channels like Instagram, YouTube, Email, Blog, etc.
+
 <img width="1100" height="1042" alt="image" src="https://github.com/user-attachments/assets/8e804190-58c8-4f52-8055-e6d266108297" />
 
 
 **2. Result Page**
 CampaignIQ generates and displays structured campaign content across sections.
+
 <img width="1144" height="1040" alt="image" src="https://github.com/user-attachments/assets/bfae5143-c94b-442c-b38c-6a9aced09a02" />
 
 
 **3. Download Option**
 Download your generated campaign plan instantly as a .txt file.
+
 <img width="1144" height="1040" alt="image" src="https://github.com/user-attachments/assets/9e578861-c13c-4801-897c-6c239e646866" />
 
 
