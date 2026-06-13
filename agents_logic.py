@@ -10,7 +10,7 @@ from langchain.chains import LLMChain, SequentialChain
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-llm = ChatGoogleGenerativeAI( model="gemini-1.5-flash", 
+llm = ChatGoogleGenerativeAI( model="gemini-2.5-flash", 
     google_api_key=GEMINI_API_KEY,
     temperature=0.7
 )
@@ -19,9 +19,9 @@ llm = ChatGoogleGenerativeAI( model="gemini-1.5-flash",
 product_prompt = PromptTemplate(
     input_variables=["product_name"],
     template="""
-Analyze the product: "{product_name}".
-Describe its features, key benefits, and why users would want to buy it.
-"""
+    Analyze the product: "{product_name}".
+    Describe its features, key benefits, and why users would want to buy it.
+    """
 )
 
 product_chain = LLMChain(
@@ -34,9 +34,9 @@ product_chain = LLMChain(
 segment_prompt = PromptTemplate(
     input_variables=["product_name"],
     template="""
-Identify 3 distinct customer segments who would buy "{product_name}".
-Describe each with age range, lifestyle, and buying motivation.
-"""
+    Identify 3 distinct customer segments who would buy "{product_name}".
+    Describe each with age range, lifestyle, and buying motivation.
+    """
 )
 
 segment_chain = LLMChain(
@@ -49,9 +49,9 @@ segment_chain = LLMChain(
 persona_prompt = PromptTemplate(
     input_variables=["product_name"],
     template="""
-Create 2 detailed customer personas for "{product_name}".
-Include: name, age, profession, goals, and preferred marketing channels.
-"""
+        Create 2 detailed customer personas for "{product_name}".
+        Include: name, age, profession, goals, and preferred marketing channels.
+    """
 )
 
 persona_chain = LLMChain(
@@ -64,12 +64,12 @@ persona_chain = LLMChain(
 content_prompt = PromptTemplate(
     input_variables=["product_name"],
     template="""
-Generate creative marketing content for "{product_name}":
-- An Instagram caption
-- An email subject line
-- A blog intro paragraph
-Keep the tone persuasive and aligned with modern digital marketing.
-"""
+        Generate creative marketing content for "{product_name}":
+        - An Instagram caption
+        - An email subject line
+        - A blog intro paragraph
+        Keep the tone persuasive and aligned with modern digital marketing.
+    """
 )
 
 content_chain = LLMChain(

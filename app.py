@@ -37,21 +37,22 @@ def download_txt():
 
     text_output = f"""📣 Campaign for "{product}"
 
-Product Analysis:
-{analysis}
+        Product Analysis:
+        {analysis}
 
-Customer Segments:
-{segments}
+        Customer Segments:
+        {segments}
 
-Personas:
-{personas}
+        Personas:
+        {personas}
 
-Marketing Content:
-{content}
+        Marketing Content:
+        {content}
 
-Channel Strategy ({', '.join(channels)}):
-{strategy}
-"""
+        Channel Strategy ({', '.join(channels)}):
+        {strategy}
+
+    """
 
     response = make_response(text_output)
     response.headers["Content-Disposition"] = f"attachment; filename={product.replace(' ', '_')}_campaign.txt"
